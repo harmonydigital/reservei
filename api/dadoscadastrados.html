@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados cadastrados Cartão Smidi</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,900;1,300&display=swap');
+
+    body {
+    background-color: #0b8beb;  
+    font-family: 'Montserrat', sans-serif;
+ 
+    }
+    header {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    font-weight: 900;
+    padding: 30px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .logo {
+    max-width: 75px;
+    }
+    a.btn-small {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: .8rem;
+    border: 1px solid;
+    width: 105px;
+    display: inline-flex;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    }
+
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td, th {
+    border: 1px solid #eee;
+    text-align: left;
+    padding: 8px;
+    color: #3a6789;
+    font-size: 16px;
+    }
+
+    tr:nth-child(even) {
+    background-color: #eee;
+    }
+    footer {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: .9rem;
+    margin: 10px auto 0;
+    opacity: 0.5;
+    
+}
+    .data-table {
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 50px;
+        overflow: auto;
+    }
+    .data-table h2 {
+    color: #3a6789;
+    font-weight: 500;
+    text-align: center;
+    text-transform: unset;
+    text-transform: uppercase;  
+    font-size: 1.3rem;
+}
+</style>
+<body>
+
+    <div id="app"></div>
+    
+</body>
+
+<script src='assets/js/api.js'></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script type="module" >
+
+
+      const firebaseConfig = {
+
+        apiKey: "AIzaSyADTqwXk1jE-nEm4Ykun9c9GrAi8qaV8Ww",
+        authDomain: "smidcard.firebaseapp.com",
+        projectId: "smidcard",
+        storageBucket: "smidcard.appspot.com",
+        messagingSenderId: "536298818755",
+        appId: "1:536298818755:web:43c4fb31a3afdbf25b6676"
+        
+      };
+       
+      firebase.initializeApp(firebaseConfig);  
+     const db = firebase.firestore();
+
+      const dataH=db.collection('dadosmidi') 
+      dataH.onSnapshot((snapshot) => {  
+            var data=[]
+            snapshot.forEach((doc) => { 
+                data.push(doc.data())  
+            });  
+            console.log(data)
+            
+            refreshData(data)
+        }, (error) => {
+                console.log('Erro ')
+
+        });  
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,45 @@
+ 
+
+.container a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #034a80;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: .9rem;
+    overflow: hidden;
+    transition: 0.2s;
+    text-align: center;
+    /* background: #2196f3; */
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+    margin: 30px auto 0;
+    border-radius: 15px;
+    font-weight: 600;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+
+
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    justify-content: center;
+
+}
+
+
+
+a:hover {
+    
+    background: #2473b4; 
+   
+}
+ 
+
+
+
+ 
+ 
+ 
