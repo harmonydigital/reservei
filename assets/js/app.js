@@ -1,119 +1,107 @@
 const app = document.getElementById('app')
-var modal=document.getElementById('modal')
 
-  
-
-
-modaltoggle=()=>{
-    modal.classList.toggle('show')
-    window.scrollTo(0, 0);
-
-}
+ 
 
 if(app){
     app.innerHTML=`
         <header>
-            <div>
-                <img class='logo' src='assets/img/logo.png'> 
+            <div class='brand'>
+                <img src='assets/img/reservei.png' alt='reservei logo'>
             </div>
-            <div class='social'>
-                <a href='' target='_blank'><i class="fa-brands fa-facebook"></i></a>
-                <a href='' target='_blank'><i class="fa-brands fa-instagram"></i></a>
-            </div>
+          
         </header>
         <main>  
         
-            <div class='flex-container first-section'>
+            <div class='flex-container'>
                 <div class="content-text">
-                    <span class="flag">crédito
-                    grupo smidi</span>
                     <h1 class=" ">
-                    agóra ficou
-                    ainda mais fácil.
+                        Reservar, leve e intuitivo.
                     </h1>
-
-                    <a class='getbuttonsmall openModal' href=''>
-                        Cadastre-se
-                    </a>
+                    <h4>notificações 
+                    de Reservas em tempo real grátis</h4>
                 </div>
-
-                <div class='cover  '>
-                    <img src='assets/img/cover-mb.png'>
-                </div>
+ 
 
             </div>
 
 
-            <div class='container getLead'> 
-                <h2 class=''>
-                Clique no botão abaixo e faça agora seu cartão SMIDI
+            <div class='container'> 
+                <img class='mockup' src='assets/img/desktop.png' alt='img'>
+            </div>
+
+            <div class='container' hidden > 
+                <h2 class=' animate__animated animate__backInRight'>
+                Clique no botão abaixo e receba seu acesso 100% grátuito a comunidade vip no telegram
                 </h2>
-                <a class='openModal animate__animated animate__pulse' href="https://t.me/ComunidadeCassinoMilionario">
+                <a class=' animate__animated animate__pulse' href="https://t.me/ComunidadeCassinoMilionario">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                    CADASTRE-SE AGORA
+                     Comprar
                 </a>
-                <div class='telegram'>
-                   <!-- <img style="  width: 80px;  " src='assets/img/telegram.png'> -->
-        
+              
+             </div>
+
+             <div class='highligts'>
+                <div class='flex-container'>
+                    <div class="content-text">
+                        <h1 class=" ">  Gerêncie de onde estiver.  </h1>
+                        <h5>pelo celular, tablet ou computador.</h5>
+                    </div> 
                 </div>
+             
+            <div class='coluns'>
+             <div class='flex-container'>
+                    <div class="">
+                        <h4 class="">  O que faz.  </h4>
+                        <ul>
+                            <li>Formulário de reservas.</li>
+                            <li>Gerenciador de conteúdo.</li>
+                            <li>Disponivel para celular, tablet ou Desktop.</li> 
+                        </ul> 
+                    </div> 
+                    <div class="mockup">
+                        <img class='mockup' src='assets/img/model.png' alt='img'> 
+                    </div> 
+                    <div class="">
+                        <h4 class=" ">  Sobre o app. </h4>
+                    <ul>
+                        <li>notificações   de Reservas em tempo real grátis</li>
+                        <li>notificações   de Reservas em tempo real grátis</li>
+                        <li>notificações   de Reservas em tempo real grátis</li> 
+                    </ul>
+                
+                </div> 
              </div> 
 
-            <div class='section-half'> 
 
-                <div>
-                   <h2>4 vantagens 
-                   para você fazer seu cadastro agora mesmo!
-                   </h2> 
-                   <a class='getbuttonsmall openModal' href=''>
-                        Cadastre-se
-                    </a>
-                </div>  
+                </div>
 
-                    <div class='highligts'> 
-                 
-                        <div class='card first'>
-                            <span class='flag'>Cartão aprovado na hora</span> 
-                        </div> 
-
-                        <div class='card'>
-                            <span class='flag'>Limite Inicial de 1.000,00</span> 
-                        </div> 
-
-                        <div class='card'>
-                            <span class='flag'>parcele em até 12x sem juros</span> 
-                        </div> 
-
-                        <div class='card'>
-                            <span class='flag'>Use seu cartão nas 9 lojas do Grupo.</span> 
-                        </div> 
-                    </div>  
             </div>
+
+
+
+ 
 
             
 
             <div class='display'>
-            <div class='flex-container'>
-            <div class="content-text">
-                <span class="flag">crédito
-                grupo smidi</span>
-                <h3 class=" ">
-                preencha seu cadastro e faça parte do grupo smidi
-                </h3>
-
-                <a class='getbuttonsmall openModal' href=''>
-                    Cadastre-se
-                </a>
+            <div>
+                <h4> Recursos do app</h4>
             </div>
-
-            <div class='cover smidicard'>
-                <img src='assets/img/cardsmidi.png'>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide"> <img src='assets/img/model.png'></div>
+                <div class="swiper-slide"> <img src='assets/img/model.png'></div>
+                <div class="swiper-slide"> <img src='assets/img/model.png'></div>
+                <div class="swiper-slide"> <img src='assets/img/model.png'></div>
+                
+                </div>
+              <!--  <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div> -->
+                <div class="swiper-pagination"></div>
             </div>
-
-        </div>
-
             </div>
 
 
@@ -123,31 +111,8 @@ if(app){
 
         </main>
         <footer>
-             Copyright 2023® - Harmony 
+             Copyright 2023® - Manauara 
         </footer>
     `
-
-
-
-   
-
-    var btnGetModal=document.querySelectorAll('.openModal')
-    var arr = Array.prototype.slice.call(btnGetModal)
-
-
-
-    arr.map((el)=>{ 
-        el.addEventListener('click',(event)=>{
-
-            event.preventDefault()
-            if(modal){
-                modal.classList.toggle('show')
-                window.scrollTo(0, 0);
-            }
-             
-        })
-    })
-  
-
 }
 

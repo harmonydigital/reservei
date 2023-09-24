@@ -3,56 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu Cartão Smidi   </title>
-    <meta name="copyright" content="© 2023 HARMONY DIGITAL / VINICIUS ARAUJO" />
-    <link rel="shortcut icon" href="favico.png" type="image/png">
+    <title>Reservei - Notificações de reservas  </title>
+    <!-- <link rel="shortcut icon" href="favico.png" type="image/png"> -->
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/neon.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  /> 
+ 
   
 </head>
 
-  <body>
-      <div id='app'></div>
-      <div id='modal'>
-        <div class='controls'>
-            <button onclick="modaltoggle()"><i class="fa-regular fa-circle-left"></i> </button>
-            <button  onclick="modaltoggle()"><i class="fa-regular fa-circle-xmark"></i></button>
-          </div>
-          <div class="text-content">
-            <h4>Cadastro Cartão Grupo Smidi</h4>
-          </div>  
-        <form class='form' action="">
-          <div>
-            <input id='namei' type="text" autofocus placeholder="Nome completo" required>
-          </div>
-        
-          <div>
-            <input id='cpfi' type="number" placeholder="CPF" required>
-          </div>
-          <div>
-            <input id='rgi' type="number" placeholder="RG" required>
-          </div>
-          <div>
-            <input id='emaili' type="email" placeholder="Digite seu e-mail" required>
-          </div>
-          <div>
-            <input id='whatsi' type="number" placeholder="Numero whatsapp" required>
-          </div>
-          <button type='submit' class="getbuttonsmall" href="">
-            Cadastre-se
-          </button>
-        </form>
-      </div>
-  </body>
+<body>
+    <div id='app'></div>
+</body>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="assets/js/app.js"></script>
-<script src="assets/js/all.js"></script>
+
 
 <script>
     
@@ -97,84 +67,5 @@ var swiper = new Swiper(".mySwiper", {
       },
 
   });
-</script>
-
-
-
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-<script type="module"> 
-
-  const firebaseConfig = {
- apiKey: "AIzaSyADTqwXk1jE-nEm4Ykun9c9GrAi8qaV8Ww",
-  authDomain: "smidcard.firebaseapp.com",
-  projectId: "smidcard",
-  storageBucket: "smidcard.appspot.com",
-  messagingSenderId: "536298818755",
-  appId: "1:536298818755:web:43c4fb31a3afdbf25b6676"
-    }; 
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig); 
-
-  // Initialize Cloud Firestore and get a reference to the service
-  const db = firebase.firestore();
-  var form=document.querySelector('.form')
-
-  form.addEventListener('submit', function(e){
-   e.preventDefault()
-    //CAMPOS
-
-    var nomei=document.getElementById('namei').value
-    var CPFi=document.getElementById('cpfi').value
-    var RGi=document.getElementById('rgi').value
-    var emaili=document.getElementById('emaili').value
-    var whatsi=document.getElementById('whatsi').value
-
-    
-    var dataUser=[{
-      name:nomei,
-      cpf:CPFi,
-      RG:RGi,
-      email:emaili,
-      numero:whatsi
-
-    }]
-
-    db.collection('dadosmidi').doc('data').set({  
-      name:nomei,
-      cpf:CPFi,
-      RG:RGi,
-      email:emaili,
-      numero:whatsi
-              })
-            
-              
-  setTimeout(function(){     
- 
-alert('Cadastro enviado com sucesso..')
-var url = "https://wa.me/551238323300?text=" // Seu numero
-                            + "*Olá, NOVO CADASTRO CRÈDITO SMIDI*" + "%0a" // Mensagem personalizada
-                            + "%0a" // Quebra de linha
-                            + "*Tipo*: Cadastro Crédito Smidi" + "%0a" // Dados do formulário
-                            + "*Nome Cliente*: " +nomei + "%0a" // Dados do formulário
-                            + "*CPF*: " + CPFi + "%0a"
-                            + "*RG*: " + RGi + "%0a"
-                            + "*Email*: " + emaili + "%0a"
-                            + "*Whatsapp*: " + whatsi + "%0a"
-                            + "%0a" // Quebra de linha
-                        
-    window.location.href=url;
-    
- 
-}, 2000);
- 
-
-
-    
-
-    console.log(dataUser)
-
-  })
 </script>
 </html>
